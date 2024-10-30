@@ -3,6 +3,10 @@ import Get_partner from "@/components/get_contract";
 
 
 export default function Home() {
+
+
+
+  
   return (
     <div className="flex flex-col justify-center align-center  w-screen">
    

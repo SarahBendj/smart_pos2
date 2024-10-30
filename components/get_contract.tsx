@@ -78,9 +78,11 @@ export default function Get_partner() {
     
 
     } catch (error) {
+   
   
-      const errorMessage  : string = error.message || "كانت هناك مشكلة في إرسال رمز التحقق.";
+      const errorMessage: string = (error as Error).message || "كانت هناك مشكلة في إرسال رمز التحقق.";
 
+      
         toast({
             variant: "destructive",
             title: "حدث خطأ.",
@@ -141,6 +143,7 @@ export default function Get_partner() {
     alt="Header Image"
     width={200} 
     height={10}
+    priority
   />
 </div>
 

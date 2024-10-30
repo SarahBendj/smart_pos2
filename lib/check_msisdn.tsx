@@ -1,4 +1,5 @@
 async function check_msisdn(msisdn: string) {
+    let message;
     try {
         const response = await fetch(`/api/check_number`, {
             method: 'POST',
@@ -7,7 +8,18 @@ async function check_msisdn(msisdn: string) {
             },
             body: JSON.stringify({ msisdn })
         });
-       
+
+        if (response.status === 302) {
+           
+           message= "لقد استنفدت جميع محاولات البحث عن العميل بهذا الرقم." 
+                 
+        }
+        if (response.status === 304) {
+           
+            message="لم يتم العثور على عميل بهذا الرقم."
+                  
+              
+         }
         
         if (!response.ok) {
 
@@ -18,9 +30,8 @@ async function check_msisdn(msisdn: string) {
         const data = await response.json();
         return data 
     } catch (error) {
-       
-       
-        throw new Error("الرقم غير صحيح. يرجى التحقق منه مرة أخرى. ");
+      
+        throw new Error ( message || "الرقم غير صحيح. يرجى التحقق منه مرة أخرى. ");
     }
 }
 
