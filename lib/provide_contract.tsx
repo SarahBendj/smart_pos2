@@ -5,7 +5,7 @@ async function provide_contract(msisdn: string) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ msisdn })
+            body: JSON.stringify({ msisdn : msisdn })
         });
        
 

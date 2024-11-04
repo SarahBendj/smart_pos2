@@ -12,7 +12,6 @@ export const POST = async (request: Request) => {
                 "Content-Type": "application/json",
             }
         });
-        console.log(response)
       
         if (response.status === 402) {
            

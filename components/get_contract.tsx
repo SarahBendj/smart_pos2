@@ -31,8 +31,8 @@ import { Loader } from 'lucide-react';
 const formSchema = z.object({
   phoneNumber: z
     .string()
-    .length(12, { message: "يجب أن يتكون رقم الهاتف من 12 رقماً بالضبط." })
-    .regex(/^\d+$/, { message: "يجب أن يحتوي رقم الهاتف على أرقام فقط." })
+    .length(12, { message: "يجب أن يتكون رقم الهاتف من 12 رقماً بالضبط" })
+    .regex(/^\d+$/, { message: "يجب أن يحتوي رقم الهاتف على أرقام فقط" })
     .refine((value) => value.startsWith('2136'), {
       message: "يجب أن يبدأ رقم الهاتف بـ 2136.",
     }),
@@ -135,8 +135,8 @@ export default function Get_partner() {
 
   return (
     <div className='flex flex-col justify-between items-center  w-full '>
-      <div className="  border-t-4 border-green-800 max-[800px]:w-full w-1/2 shadow-2xl p-4 rounded-lg">
-      <div className="flex justify-center items-center w-full">
+      <div className="  max-[800px]:shadow-green-950 border-t-4 border-green-800 max-[800px]:w-full w-1/2 shadow-xl p-4 rounded-lg">
+      <div className="flex justify-center items-center w-full ">
         
   <Image
     src={Veganrecipe}
@@ -147,7 +147,7 @@ export default function Get_partner() {
   />
 </div>
 
-      <div className="mb-8 max-[800px]:w-full ">
+      <div className="mb-8  max-[800px]:mb-4  max-[800px]:w-full ">
         <Header  
           clueTitle={"بوابة موبيليس"}
           mainTitle={"اطلب عقدك بطريقة آمنة"}
@@ -197,7 +197,7 @@ export default function Get_partner() {
                   control={form.control}
                   name="phoneNumber"
                   render={({ field }) => (
-                    <FormItem className=" relative h-16 flex justify-center  w-80 items-align   max-[800px]:flex-col  flex-row-reverse max-[800px]:w-full  ">
+                    <FormItem className=" max-[800px]:mb-10 relative h-16 flex justify-center  w-80 items-align   max-[800px]:flex-col  flex-row-reverse max-[800px]:w-full  ">
                     <FormLabel className=" text-sm w-full text-right pl-8 mt-4  max-[800px]:p-0 ">رقم الهاتف</FormLabel>
                     <FormControl >
                   

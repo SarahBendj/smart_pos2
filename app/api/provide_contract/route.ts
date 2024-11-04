@@ -15,7 +15,7 @@ export const POST = async (request: Request) => {
                 "Accept": "application/pdf",
             }
         });
-        console.log(response)
+        
 
 
         if (!response.ok) {

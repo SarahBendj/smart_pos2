@@ -6,7 +6,7 @@ async function check_msisdn(msisdn: string) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({ msisdn })
+            body: JSON.stringify({ msisdn:msisdn })
         });
 
         if (response.status === 302) {
